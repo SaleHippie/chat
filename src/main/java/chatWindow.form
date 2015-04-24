@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="chatWindow">
+  <grid id="27dc6" binding="panelContainer" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <preferredSize width="500" height="500"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <scrollpane id="3afc7" binding="chatContent">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <background color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="7818a" class="javax.swing.JTextPane" binding="chatPane">
+            <constraints/>
+            <properties>
+              <background color="-1"/>
+              <editable value="false"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <grid id="482bd" binding="panelWriting" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="South"/>
+        <properties>
+          <maximumSize width="2147483647" height="200"/>
+          <preferredSize width="500" height="64"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="c447c" class="javax.swing.JButton" binding="sendButton" default-binding="true">
+            <constraints border-constraint="East"/>
+            <properties>
+              <text value="Send"/>
+            </properties>
+          </component>
+          <component id="ab916" class="javax.swing.JButton" binding="emoteButton" default-binding="true">
+            <constraints border-constraint="West"/>
+            <properties>
+              <text value="emote"/>
+            </properties>
+          </component>
+          <scrollpane id="78159" binding="messageScroll">
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="35c5c" class="javax.swing.JTextArea" binding="messageWriter">
+                <constraints/>
+                <properties>
+                  <dragEnabled value="true"/>
+                  <lineWrap value="true"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </grid>
+      <grid id="11eda" binding="panelUser" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="West"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="edb7e" class="javax.swing.JLabel" binding="usersList">
+            <constraints/>
+            <properties>
+              <text value="Label"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
