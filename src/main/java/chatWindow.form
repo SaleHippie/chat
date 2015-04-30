@@ -13,6 +13,8 @@
         <constraints border-constraint="Center"/>
         <properties>
           <background color="-1"/>
+          <horizontalScrollBarPolicy value="30"/>
+          <maximumSize width="500" height="32767"/>
         </properties>
         <border type="none"/>
         <children>
@@ -21,6 +23,9 @@
             <properties>
               <background color="-1"/>
               <editable value="false"/>
+              <focusCycleRoot value="true"/>
+              <inheritsPopupMenu value="false"/>
+              <margin top="3" left="3" bottom="3" right="3"/>
             </properties>
           </component>
         </children>
@@ -62,15 +67,19 @@
           </scrollpane>
         </children>
       </grid>
-      <grid id="11eda" binding="panelUser" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="11eda" binding="panelUser" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints border-constraint="West"/>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="edb7e" class="javax.swing.JLabel" binding="usersList">
-            <constraints/>
+          <component id="dc3b0" class="javax.swing.JTextArea" binding="usersList" default-binding="true">
+            <constraints border-constraint="Center"/>
             <properties>
-              <text value="Label"/>
+              <background color="-1513240"/>
+              <editable value="false"/>
+              <enabled value="true"/>
+              <margin top="3" left="3" bottom="3" right="3"/>
+              <text value="Jean &#10;SaleHippie&#10;Roger&#10;Test1&#10;Kevin&#10;Swerky"/>
             </properties>
           </component>
         </children>
