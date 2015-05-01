@@ -30,12 +30,38 @@ public class chatWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 Document doc = chatPane.getDocument();
+                String message = messageWriter.getText();
                 try {
-                    doc.insertString(doc.getLength(), "Moi : " + messageWriter.getText() + "\n", chatPane.getStyle("default"));
+                    doc.insertString(doc.getLength(), message + "\n", chatPane.getStyle("default"));
                 } catch (BadLocationException e1) {
                     e1.printStackTrace();
                 }
 
+              /*  PrintWriter prt = null;
+
+                try {
+                    prt = new PrintWriter(String.valueOf(ChannelOutboundBuffer.class));
+                    prt.println("[" + main.pseudo + "] " + message + "\r\n");
+                } catch (FileNotFoundException e1) {
+                    e1.printStackTrace();
+                }
+
+                //  BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
+
+                //try {
+                   /* out.write("[" + main.pseudo + "] " + message + "\r\n");
+                    out.newLine();
+                    out.flush();*/
+
+
+             /*   } catch (IOException e1) {
+                    try {
+                        doc.insertString(doc.getLength(), "message perdu", chatPane.getStyle("default"));
+                    } catch (BadLocationException e2) {
+                        e2.printStackTrace();
+                    }
+                }**/
+                main.send(message);
                 messageWriter.setText(null);
             }
         });

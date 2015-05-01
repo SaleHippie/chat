@@ -7,7 +7,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<String>{
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         System.out.println(msg);
 
-        window main = new window();
+        main main = new main();
         main.showMessageRecived(msg);
     }
 

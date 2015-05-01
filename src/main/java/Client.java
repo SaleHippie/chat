@@ -1,5 +1,6 @@
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.*;
+import io.netty.channel.Channel;
+import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
@@ -11,6 +12,7 @@ public class Client {
 
     private final String host;
     private final int port;
+    public Channel channel = null;
 
     public Client(String host, int port) {
         this.host = host;
@@ -18,12 +20,11 @@ public class Client {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        System.out.println("open client");
         new Client("localhost",8000 ).run();
-        System.out.println("test client");
     }
     public void run() throws IOException, InterruptedException {
         EventLoopGroup group = new NioEventLoopGroup();
+
 
 
         try{
@@ -32,17 +33,21 @@ public class Client {
                     .channel(NioSocketChannel.class)
                     .handler(new ClientInitializer());
 
-            Channel channel = bootstrap.connect(host, port).sync().channel();
+            channel = bootstrap.connect(host, port).sync().channel();
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
             while (true){
-                channel.writeAndFlush(in.readLine() + "\r\n");
+
             }
         }
         finally {
             group.shutdownGracefully();
         }
+    }
 
+    public void send(String msg){
+
+       //chan.writeAndFlush(msg + "\r\n");
     }
 
 }
